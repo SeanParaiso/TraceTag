@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardBackgroundColor="#D9D9D9">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageButton
+                android:id="@+id/tracetag"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginRight="45dp"
+                android:scaleType="fitCenter"
+                android:scaleX="2"
+                android:scaleY="2"
+                tools:srcCompat="@drawable/tracetag" />
+
+            <android.widget.SearchView
+                android:layout_width="250dp"
+                android:layout_height="match_parent" />
+
+            <ImageButton
+                android:id="@+id/profilebtn"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:scaleType="fitCenter"
+                android:layout_marginLeft="15dp"
+                tools:srcCompat="@drawable/hamburger" />
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+
+</androidx.cardview.widget.CardView>
