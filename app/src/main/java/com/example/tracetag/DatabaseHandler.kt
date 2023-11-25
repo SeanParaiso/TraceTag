@@ -25,15 +25,9 @@ class DatabaseHandler(context: Context) : SQLiteOpenHelper(context, DATABASE_NAM
 
     override fun onCreate(db: SQLiteDatabase?) {
         // Creating the Users table
-        val CREATE_USERS_TABLE = ("CREATE TABLE $TABLE_USERS ("
-                + "$KEY_ID INTEGER PRIMARY KEY,"
-                + "$KEY_NAME TEXT,"
-                + "$KEY_USERNAME TEXT,"
-                + "$KEY_PASSWORD TEXT,"
-                + "$KEY_LOCATION TEXT,"
-                + "$KEY_MOBILE_NUMBER TEXT,"
-                + "$KEY_FACEBOOK TEXT,"
-                + "$KEY_EMAIL TEXT" + ")")
+        val CREATE_USERS_TABLE = ("CREATE TABLE $TABLE_USERS (" + "$KEY_ID INTEGER PRIMARY KEY," + "$KEY_NAME TEXT,"
+                + "$KEY_USERNAME TEXT," + "$KEY_PASSWORD TEXT," + "$KEY_LOCATION TEXT," + "$KEY_MOBILE_NUMBER TEXT,"
+                + "$KEY_FACEBOOK TEXT," + "$KEY_EMAIL TEXT" + ")")
 
         db?.execSQL(CREATE_USERS_TABLE)
     }
@@ -107,6 +101,19 @@ class DatabaseHandler(context: Context) : SQLiteOpenHelper(context, DATABASE_NAM
         db.close()
         return user
     }
+
+    // Function to update a user in the database
+    fun updateUser(user: UserModelClass): Int {
+        val db = this.writableDatabase
+        val contentValues = ContentValues()
+        contentValues.put(KEY_PASSWORD, user.password)
+
+        // Updating Row
+        val success = db.update(TABLE_USERS, contentValues, "$KEY_ID=?", arrayOf(user.userId.toString()))
+        db.close() // Closing database connection
+        return success
+    }
+
     // Additional functions for updating and deleting users can be added here
 }
 

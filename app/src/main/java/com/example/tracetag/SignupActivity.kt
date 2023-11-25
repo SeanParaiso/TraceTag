@@ -20,7 +20,6 @@ class SignupActivity : AppCompatActivity() {
 
         sharedPreferences = getSharedPreferences(sharedPrefFile, Context.MODE_PRIVATE)
 
-        // Initialize your EditText elements
         val etName = findViewById<EditText>(R.id.etName)
         val etUsername = findViewById<EditText>(R.id.etUsername)
         val etPassword = findViewById<EditText>(R.id.etPassword)
@@ -30,12 +29,9 @@ class SignupActivity : AppCompatActivity() {
         val etEmail = findViewById<EditText>(R.id.etEmail)
 
         val btnSignup = findViewById<Button>(R.id.btnSignup)
-
-        // Create an instance of the DatabaseHandler
         val dbHandler = DatabaseHandler(this)
 
         btnSignup.setOnClickListener {
-            // Retrieve values from EditText elements
             val name = etName.text.toString()
             val username = etUsername.text.toString()
             val password = etPassword.text.toString()
@@ -54,28 +50,15 @@ class SignupActivity : AppCompatActivity() {
 
             // Create an instance of UserModelClass with the retrieved values
             val user = UserModelClass(
-                userId = 0,
-                name = name,
-                username = username,
-                password = password,
-                location = location,
-                mobileNumber = mobileNumber,
-                facebook = facebook,
-                email = email
-            )
+                userId = 0, name = name, username = username, password = password,
+                location = location, mobileNumber = mobileNumber, facebook = facebook, email = email)
 
-            // Add the user details to the database
             val result = dbHandler.addUser(user)
 
-            // Check the result of the database insertion
             if (result > -1) {
-                // Database insertion successful
-                // You can add additional logic or navigate to another screen if needed
                 Toast.makeText(this, "Signup successful", Toast.LENGTH_SHORT).show()
                 finish()
             } else {
-                // Database insertion failed
-                // You can display an error message or handle it accordingly
                 Toast.makeText(this, "Signup failed", Toast.LENGTH_SHORT).show()
             }
         }
