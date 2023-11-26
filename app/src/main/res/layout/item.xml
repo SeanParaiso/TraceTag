@@ -6,25 +6,43 @@
     android:layout_height="match_parent"
     android:background="@drawable/background">
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="match_parent"
-        android:layout_height="55dp"
-        android:orientation="vertical"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="-1dp"
-        tools:layout_editor_absoluteY="1dp">
+        <LinearLayout
+            android:id="@+id/topnavbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            tools:ignore="MissingConstraints"
+            android:background="#D9D9D9">
 
-    </LinearLayout>
+            <ImageButton
+                android:id="@+id/tracetaglogo"
+                android:layout_width="70dp"
+                android:layout_height="60dp"
+                android:layout_marginRight="30dp"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
+                android:src="@drawable/tracetag" />
+
+            <android.widget.SearchView
+                android:layout_width="232dp"
+                android:layout_height="match_parent"
+                android:background="#FFFFFF" />
+
+            <ImageButton
+                android:id="@+id/info"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
+                android:src="@drawable/info" />
+        </LinearLayout>
 
     <LinearLayout
         android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
         android:layout_height="55dp"
         android:orientation="horizontal"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="-1dp"
-        tools:layout_editor_absoluteY="57dp">
+        app:layout_constraintTop_toBottomOf="@id/topnavbar">
 
         <ImageButton
             android:id="@+id/btnBack"
@@ -41,22 +59,24 @@
         android:id="@+id/imgitem"
         android:layout_width="413dp"
         android:layout_height="238dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:src="@drawable/ic_launcher_background"
+        app:layout_constraintTop_toBottomOf="@id/linearLayout2"
+        tools:ignore="MissingConstraints" />
+
+    <ScrollView
+        android:id="@+id/ll2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/imgitem"
+        app:layout_constraintBottom_toTopOf="@id/userinfo"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.223"
-        tools:srcCompat="@tools:sample/backgrounds/scenic" />
+        tools:ignore="NotSibling">
 
     <LinearLayout
-        android:id="@+id/ll1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintTop_toBottomOf="@+id/imgitem"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="349dp">
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/tvItemName"
@@ -94,17 +114,18 @@
             android:padding="15dp"
             android:text="Location" />
     </LinearLayout>
-
+    </ScrollView>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="302dp"
         android:gravity="center_horizontal"
         android:orientation="vertical"
-        app:layout_constraintTop_toBottomOf="@+id/ll1"
+        app:layout_constraintTop_toBottomOf="@+id/ll2"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="1dp">
 
         <LinearLayout
+            android:id="@+id/userinfo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -141,6 +162,61 @@
 
 
     </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/botnavbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="4dp"
+        tools:ignore="MissingConstraints"
+        android:backgroundTint="#286441"
+        app:layout_constraintBottom_toBottomOf="parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            tools:ignore="MissingConstraints">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <ImageButton
+                    android:id="@+id/homebtn"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:adjustViewBounds="true"
+                    android:layout_marginRight="45dp"
+                    android:src="@drawable/home"
+                    android:scaleType="fitCenter"
+                    />
+
+                <ImageButton
+                    android:id="@+id/addbtn"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/add"
+                    android:adjustViewBounds="true"
+                    android:layout_margin="5dp"
+                    android:scaleType="fitCenter"
+                    />
+
+                <ImageButton
+                    android:id="@+id/profilebtn"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/user"
+                    android:layout_marginLeft="45dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitCenter"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

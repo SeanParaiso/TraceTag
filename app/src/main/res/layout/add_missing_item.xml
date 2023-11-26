@@ -7,14 +7,34 @@
     android:background="@drawable/background">
 
     <LinearLayout
-        android:id="@+id/linearLayout"
+        android:id="@+id/topnavbar"
         android:layout_width="match_parent"
-        android:layout_height="55dp"
-        android:orientation="vertical"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="-1dp"
-        tools:layout_editor_absoluteY="1dp">
+        android:background="#D9D9D9">
 
+        <ImageButton
+            android:id="@+id/tracetaglogo"
+            android:layout_width="70dp"
+            android:layout_height="60dp"
+            android:layout_marginRight="30dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/tracetag" />
+
+        <android.widget.SearchView
+            android:layout_width="232dp"
+            android:layout_height="match_parent"
+            android:background="#FFFFFF" />
+
+        <ImageButton
+            android:id="@+id/info"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/info" />
     </LinearLayout>
 
     <LinearLayout
@@ -23,6 +43,7 @@
         android:layout_height="55dp"
         android:orientation="horizontal"
         tools:ignore="MissingConstraints"
+        app:layout_constraintTop_toBottomOf="@+id/topnavbar"
         tools:layout_editor_absoluteX="-1dp"
         tools:layout_editor_absoluteY="57dp">
 
@@ -41,9 +62,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="113dp"
-        tools:ignore="MissingConstraints"
+        app:layout_constraintTop_toBottomOf="@id/linearLayout2"
         android:gravity="center">
 
         <ImageView
@@ -52,7 +71,7 @@
             android:layout_height="110dp"
             tools:layout_editor_absoluteX="91dp"
             tools:layout_editor_absoluteY="150dp"
-            tools:srcCompat="@tools:sample/avatars" />
+            android:src="@drawable/ic_launcher_background" />
 
         <Button
             android:id="@+id/uploadlost"
@@ -65,7 +84,14 @@
 
 
     </LinearLayout>
-
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/btnLost"
+        app:layout_constraintStart_toStartOf="@+id/ll4"
+        app:layout_constraintTop_toBottomOf="@+id/ll4">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -128,7 +154,7 @@
         <CalendarView
             android:id="@+id/etDateLost"
             android:layout_width="188dp"
-            android:layout_height="171dp" />
+            android:layout_height="227dp"  />
 
         <TextView
             android:id="@+id/textView4"
@@ -172,6 +198,7 @@
             android:inputType="textMultiLine"
             android:padding="8dp" />
     </LinearLayout>
+    </ScrollView>
     <Button
         android:id="@+id/btnLost"
         android:layout_width="wrap_content"

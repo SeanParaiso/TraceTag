@@ -28,6 +28,7 @@
                     app:srcCompat="@drawable/lost" />
 
                 <TextView
+                    android:id="@+id/tvAddLost"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/bentham"
@@ -50,6 +51,7 @@
                     android:layout_margin="5dp"/>
 
                 <TextView
+                    android:id="@+id/tvAddFound"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/bentham"
