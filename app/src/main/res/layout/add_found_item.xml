@@ -111,6 +111,7 @@
             android:id="@+id/linearLayout3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
             android:orientation="vertical"
             app:layout_constraintTop_toBottomOf="@+id/ll3">
 
@@ -120,6 +121,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/bentham"
                 android:text="Enter Item Name:"
+                android:textStyle="bold"
                 android:textSize="16sp"
                 tools:layout_editor_absoluteX="56dp"
                 tools:layout_editor_absoluteY="428dp" />
@@ -130,8 +132,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:gravity="center"
-                android:hint="Enter item name"
+                android:hint="Item name"
+                android:fontFamily="serif"
+                android:textSize="15dp"
+                android:background="@drawable/custom_input"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:drawableStart="@drawable/custom_username_icon"
+                android:drawablePadding="8dp"
                 android:inputType="textMultiLine"
                 android:padding="8dp" />
 
@@ -141,18 +151,28 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/bentham"
                 android:text="Category:"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"
                 android:textSize="16sp"
                 tools:layout_editor_absoluteX="56dp"
                 tools:layout_editor_absoluteY="428dp" />
 
             <EditText
-                android:id="@+id/etCatgryFound"
+                android:id="@+id/etCategoryFound"
                 style="@style/Widget.AppCompat.EditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:gravity="center"
+                android:fontFamily="serif"
                 android:hint="Enter category"
+                android:textSize="15dp"
+                android:background="@drawable/custom_input"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:drawableStart="@drawable/custom_username_icon"
+                android:drawablePadding="8dp"
                 android:inputType="textMultiLine"
                 android:padding="8dp" />
 
@@ -162,13 +182,15 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/bentham"
                 android:text="Date Found:"
+                android:layout_marginTop="12dp"
+                android:textStyle="bold"
                 android:textSize="16sp"
                 tools:layout_editor_absoluteX="56dp"
                 tools:layout_editor_absoluteY="428dp" />
 
             <CalendarView
                 android:id="@+id/etDateFound"
-                android:layout_width="188dp"
+                android:layout_width="match_parent"
                 android:layout_height="227dp" />
 
             <TextView
@@ -177,6 +199,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/bentham"
                 android:text="Description:"
+                android:textStyle="bold"
                 android:textSize="16sp"
                 tools:layout_editor_absoluteX="56dp"
                 tools:layout_editor_absoluteY="428dp" />
@@ -187,8 +210,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:gravity="center"
+                android:fontFamily="serif"
                 android:hint="Enter description"
+                android:textSize="15dp"
+                android:background="@drawable/custom_input"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:drawableStart="@drawable/custom_username_icon"
+                android:drawablePadding="8dp"
                 android:inputType="textMultiLine"
                 android:padding="8dp" />
 
@@ -198,6 +229,8 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/bentham"
                 android:text="Location:"
+                android:textStyle="bold"
+                android:layout_marginTop="12dp"
                 android:textSize="16sp"
                 tools:layout_editor_absoluteX="56dp"
                 tools:layout_editor_absoluteY="428dp" />
@@ -208,8 +241,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:gravity="center"
                 android:hint="Enter location"
+                android:textSize="15dp"
+                android:background="@drawable/custom_input"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:drawableStart="@drawable/custom_location_icon"
+                android:drawablePadding="8dp"
+                android:layout_marginBottom="20dp"
                 android:inputType="textMultiLine"
                 android:padding="8dp" />
         </LinearLayout>
