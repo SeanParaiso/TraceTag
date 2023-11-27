@@ -25,6 +25,13 @@
         <activity android:name=".SignupActivity">
         </activity>
 
+        <activity android:name=".HomeActivity">
+        </activity>
+
+        <activity android:name=".ProfileActivity">
+        </activity>
+
+
         <activity android:name=".ChangePasswordActivity">
         </activity>
 
@@ -32,14 +39,17 @@
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
+
         <activity
             android:name=".AddFoundItem"
             android:exported="true">
         </activity>
+
         <activity
             android:name=".AddLostItem"
             android:exported="true">
         </activity>
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />

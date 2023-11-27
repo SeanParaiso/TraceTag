@@ -50,6 +50,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:scaleType="fitCenter"
+            android:backgroundTint="@color/green"
             app:srcCompat="@drawable/back"
             android:layout_marginRight="250dp"/>
 
@@ -255,7 +256,7 @@
                     android:id="@+id/profilebtn"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:src="@drawable/user"
+                    android:src="@drawable/user2"
                     android:layout_marginLeft="45dp"
                     android:adjustViewBounds="true"
                     android:scaleType="fitCenter"

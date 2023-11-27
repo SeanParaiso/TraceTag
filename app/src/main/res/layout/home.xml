@@ -291,7 +291,7 @@
                 android:id="@+id/profilebtn"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:src="@drawable/user"
+                android:src="@drawable/user2"
                 android:layout_marginLeft="45dp"
                 android:adjustViewBounds="true"
                 android:scaleType="fitCenter"

@@ -1,10 +1,12 @@
 package com.example.tracetag
 
 import android.content.Context
+import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
@@ -29,6 +31,7 @@ class SignupActivity : AppCompatActivity() {
         val etEmail = findViewById<EditText>(R.id.etEmail)
 
         val btnSignup = findViewById<Button>(R.id.btnSignup)
+        val btnBack = findViewById<ImageView>(R.id.btnBack)
         val dbHandler = DatabaseHandler(this)
 
         btnSignup.setOnClickListener {
@@ -61,6 +64,12 @@ class SignupActivity : AppCompatActivity() {
             } else {
                 Toast.makeText(this, "Signup failed", Toast.LENGTH_SHORT).show()
             }
+        }
+
+        btnBack.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+            finish()
         }
     }
 }

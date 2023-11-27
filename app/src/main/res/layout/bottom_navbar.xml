@@ -42,7 +42,7 @@
                 android:id="@+id/profilebtn"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                tools:srcCompat="@drawable/user"
+                tools:srcCompat="@drawable/user2"
                 android:layout_marginLeft="45dp"
                 android:scaleType="fitCenter"
                 />
