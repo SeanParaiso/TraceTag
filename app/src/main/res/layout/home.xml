@@ -30,7 +30,7 @@
                 android:background="#FFFFFF" />
 
             <ImageButton
-                android:id="@+id/info"
+                android:id="@+id/btnabout"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:adjustViewBounds="true"

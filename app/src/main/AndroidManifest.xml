@@ -35,6 +35,8 @@
         <activity android:name=".ChangePasswordActivity">
         </activity>
 
+        <activity android:name=".aboutUs">
+        </activity>
 
         <meta-data
             android:name="preloaded_fonts"

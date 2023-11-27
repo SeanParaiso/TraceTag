@@ -27,6 +27,11 @@ class HomeActivity : AppCompatActivity() {
             startActivity(i)
         }
 
+        val btnAbout = findViewById<ImageButton>(R.id.btnabout)
+        btnAbout.setOnClickListener {
+            val i = Intent(this, aboutUs::class.java)
+            startActivity(i)
+        }
     }
 
 
@@ -39,13 +44,9 @@ class HomeActivity : AppCompatActivity() {
         dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         dialog.show()
 
-        val addLostBtn = dialog.findViewById<ImageButton>(R.id.btnAddLost)
+
         val addFoundBtn = dialog.findViewById<ImageButton>(R.id.btnAddFound)
 
-        addLostBtn.setOnClickListener {
-            val i = Intent(this, AddLostItem::class.java)
-            startActivity(i)
-        }
         addFoundBtn.setOnClickListener {
             val i = Intent(this, AddFoundItem::class.java)
             startActivity(i)

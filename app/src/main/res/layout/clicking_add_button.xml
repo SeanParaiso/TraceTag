@@ -14,33 +14,9 @@
             android:layout_gravity="center">
 
             <LinearLayout
-                android:layout_width="136dp"
-                android:layout_height="wrap_content"
-                android:background="#C3DF88"
-                android:orientation="vertical"
-                android:paddingRight="10dp">
-
-                <ImageButton
-                    android:id="@+id/btnAddLost"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    app:srcCompat="@drawable/lost" />
-
-                <TextView
-                    android:id="@+id/tvAddLost"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/bentham"
-                    android:text="Add Missing Item"
-                    android:textSize="20sp" />
-            </LinearLayout>
-
-            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:layout_marginLeft="90dp"
                 android:background="#C3DF88">
 
                 <ImageButton

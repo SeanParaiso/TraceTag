@@ -75,8 +75,8 @@ comes with losing something valuable, and our mission is to make
 
         <TextView
             android:id="@+id/textView7"
-            android:layout_width="359dp"
-            android:layout_height="122dp"
+            android:layout_width="364dp"
+            android:layout_height="158dp"
             android:fontFamily="@font/poppins"
             android:text="At Trace Tag, we're committed to harnessing technology
 to serve a noble cause—helping people reclaim what matters most to them.
@@ -86,10 +86,10 @@ that cares, shares, and supports each other."
             android:textAlignment="viewStart"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.45"
+            app:layout_constraintHorizontal_bias="0.553"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.359" />
+            app:layout_constraintVertical_bias="0.375" />
 
         <TextView
             android:id="@+id/textView8"
@@ -180,7 +180,7 @@ Your act of kindness could make someone's day!"
             app:layout_constraintVertical_bias="0.0" />
 
         <ImageButton
-            android:id="@+id/btnBack3"
+            android:id="@+id/btnBack"
             android:layout_width="40dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
