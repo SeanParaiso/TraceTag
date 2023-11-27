@@ -21,6 +21,7 @@
             android:layout_marginRight="30dp"
             android:adjustViewBounds="true"
             android:scaleType="fitCenter"
+            android:background="@android:color/transparent"
             android:src="@drawable/tracetag" />
 
         <android.widget.SearchView
@@ -114,7 +115,7 @@
             android:textSize="20sp"  />
 
         <TextView
-            android:id="@+id/tbFb"
+            android:id="@+id/tvFb"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Facebook profile"
@@ -239,6 +240,7 @@
                     android:adjustViewBounds="true"
                     android:layout_marginRight="45dp"
                     android:src="@drawable/home"
+                    android:background="@android:color/transparent"
                     android:scaleType="fitCenter"
                     />
 
@@ -249,6 +251,7 @@
                     android:src="@drawable/add"
                     android:adjustViewBounds="true"
                     android:layout_margin="5dp"
+                    android:background="@android:color/transparent"
                     android:scaleType="fitCenter"
                     />
 
@@ -259,6 +262,7 @@
                     android:src="@drawable/user2"
                     android:layout_marginLeft="45dp"
                     android:adjustViewBounds="true"
+                    android:background="@android:color/transparent"
                     android:scaleType="fitCenter"
                     />
             </LinearLayout>

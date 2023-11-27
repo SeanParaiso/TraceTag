@@ -21,6 +21,7 @@
                 android:layout_height="60dp"
                 android:layout_marginRight="30dp"
                 android:adjustViewBounds="true"
+                android:background="@android:color/transparent"
                 android:scaleType="fitCenter"
                 android:src="@drawable/tracetag" />
 
@@ -275,6 +276,8 @@
                 android:layout_marginRight="45dp"
                 android:src="@drawable/home"
                 android:scaleType="fitCenter"
+                android:background="@android:color/transparent"
+
                 />
 
             <ImageButton
@@ -285,6 +288,8 @@
                 android:adjustViewBounds="true"
                 android:layout_margin="5dp"
                 android:scaleType="fitCenter"
+                android:background="@android:color/transparent"
+
                 />
 
             <ImageButton
@@ -295,6 +300,8 @@
                 android:layout_marginLeft="45dp"
                 android:adjustViewBounds="true"
                 android:scaleType="fitCenter"
+                android:background="@android:color/transparent"
+
                 />
         </LinearLayout>
     </LinearLayout>

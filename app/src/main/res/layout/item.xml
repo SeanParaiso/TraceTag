@@ -21,6 +21,7 @@
                 android:layout_marginRight="30dp"
                 android:adjustViewBounds="true"
                 android:scaleType="fitCenter"
+                android:background="@android:color/transparent"
                 android:src="@drawable/tracetag" />
 
             <android.widget.SearchView
@@ -192,6 +193,7 @@
                     android:adjustViewBounds="true"
                     android:layout_marginRight="45dp"
                     android:src="@drawable/home"
+                    android:background="@android:color/transparent"
                     android:scaleType="fitCenter"
                     />
 
@@ -202,6 +204,7 @@
                     android:src="@drawable/add"
                     android:adjustViewBounds="true"
                     android:layout_margin="5dp"
+                    android:background="@android:color/transparent"
                     android:scaleType="fitCenter"
                     />
 
@@ -213,6 +216,7 @@
                     android:layout_marginLeft="45dp"
                     android:adjustViewBounds="true"
                     android:scaleType="fitCenter"
+                    android:background="@android:color/transparent"
                     />
             </LinearLayout>
         </LinearLayout>
