@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/background">
 
     <LinearLayout
         android:id="@+id/topnavbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#D9D9D9"
         android:orientation="horizontal"
-        tools:ignore="MissingConstraints">
+        tools:ignore="MissingConstraints"
+        android:background="#D9D9D9">
 
         <ImageButton
             android:id="@+id/tracetaglogo"
@@ -43,8 +43,8 @@
         android:layout_width="match_parent"
         android:layout_height="55dp"
         android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@+id/topnavbar"
         tools:ignore="MissingConstraints"
+        app:layout_constraintTop_toBottomOf="@+id/topnavbar"
         tools:layout_editor_absoluteX="-1dp"
         tools:layout_editor_absoluteY="57dp">
 
@@ -52,10 +52,10 @@
             android:id="@+id/btnBack"
             android:layout_width="40dp"
             android:layout_height="wrap_content"
-            android:layout_marginRight="350dp"
             android:layout_weight="1"
             android:scaleType="fitCenter"
-            app:srcCompat="@drawable/back" />
+            app:srcCompat="@drawable/back"
+            android:layout_marginRight="350dp"/>
 
     </LinearLayout>
 
@@ -64,35 +64,36 @@
         android:id="@+id/ll3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
         android:orientation="vertical"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
-        tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="113dp">
+        tools:layout_editor_absoluteY="113dp"
+        tools:ignore="MissingConstraints"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+        android:gravity="center">
 
         <ImageView
             android:id="@+id/imageView4"
             android:layout_width="109dp"
             android:layout_height="110dp"
-            android:src="@drawable/ic_launcher_background"
             tools:layout_editor_absoluteX="91dp"
-            tools:layout_editor_absoluteY="150dp" />
+            tools:layout_editor_absoluteY="150dp"
+            android:src="@drawable/ic_launcher_background" />
 
         <Button
-            android:id="@+id/uploadFound"
+            android:id="@+id/uploadfound"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="#E8E8E8"
             android:fontFamily="@font/bentham"
-            android:text="Upload photo"
+            android:text="Upload Photos*"
             android:textColor="#000000" />
 
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+
 
 
     </LinearLayout>
@@ -120,8 +121,8 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/bentham"
                 android:text="Enter Item Name:"
-                android:textSize="16sp"
                 android:textStyle="bold"
+                android:textSize="16sp"
                 tools:layout_editor_absoluteX="56dp"
                 tools:layout_editor_absoluteY="428dp" />
 
@@ -130,29 +131,29 @@
                 style="@style/Widget.AppCompat.EditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Item name"
+                android:fontFamily="serif"
+                android:textSize="15dp"
+                android:background="@drawable/custom_input"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
-                android:background="@drawable/custom_input"
-                android:drawableStart="@drawable/custom_username_icon"
-                android:drawablePadding="8dp"
-                android:ems="10"
-                android:fontFamily="serif"
-                android:hint="Item name"
-                android:inputType="textMultiLine"
-                android:padding="8dp"
                 android:paddingStart="8dp"
                 android:paddingEnd="8dp"
-                android:textSize="15dp" />
+                android:drawableStart="@drawable/custom_username_icon"
+                android:drawablePadding="8dp"
+                android:inputType="textMultiLine"
+                android:padding="8dp" />
 
             <TextView
                 android:id="@+id/textView3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
                 android:fontFamily="@font/bentham"
                 android:text="Category:"
-                android:textSize="16sp"
                 android:textStyle="bold"
+                android:layout_marginTop="10dp"
+                android:textSize="16sp"
                 tools:layout_editor_absoluteX="56dp"
                 tools:layout_editor_absoluteY="428dp" />
 
@@ -161,28 +162,28 @@
                 style="@style/Widget.AppCompat.EditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"
-                android:background="@drawable/custom_input"
-                android:drawableStart="@drawable/custom_username_icon"
-                android:drawablePadding="8dp"
                 android:ems="10"
                 android:fontFamily="serif"
                 android:hint="Enter category"
-                android:inputType="textMultiLine"
-                android:padding="8dp"
+                android:textSize="15dp"
+                android:background="@drawable/custom_input"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
                 android:paddingStart="8dp"
                 android:paddingEnd="8dp"
-                android:textSize="15dp" />
+                android:drawableStart="@drawable/custom_username_icon"
+                android:drawablePadding="8dp"
+                android:inputType="textMultiLine"
+                android:padding="8dp" />
 
             <TextView
                 android:id="@+id/textView36"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
                 android:fontFamily="@font/bentham"
                 android:text="Date Found:"
                 android:textSize="16sp"
+                android:layout_marginTop="12dp"
                 android:textStyle="bold"
                 tools:layout_editor_absoluteX="56dp"
                 tools:layout_editor_absoluteY="428dp" />
@@ -219,57 +220,56 @@
                 tools:layout_editor_absoluteY="428dp" />
 
             <EditText
-                android:id="@+id/etDescriptionFound"
+                android:id="@+id/etDescFound"
                 style="@style/Widget.AppCompat.EditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"
-                android:background="@drawable/custom_input"
-                android:drawableStart="@drawable/custom_username_icon"
-                android:drawablePadding="8dp"
                 android:ems="10"
                 android:fontFamily="serif"
                 android:hint="Enter description"
-                android:inputType="textMultiLine"
-                android:padding="8dp"
+                android:textSize="15dp"
+                android:background="@drawable/custom_input"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
                 android:paddingStart="8dp"
                 android:paddingEnd="8dp"
-                android:textSize="15dp" />
+                android:drawableStart="@drawable/custom_username_icon"
+                android:drawablePadding="8dp"
+                android:inputType="textMultiLine"
+                android:padding="8dp" />
 
             <TextView
                 android:id="@+id/textView5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
                 android:fontFamily="@font/bentham"
                 android:text="Location:"
-                android:textSize="16sp"
                 android:textStyle="bold"
+                android:layout_marginTop="12dp"
+                android:textSize="16sp"
                 tools:layout_editor_absoluteX="56dp"
                 tools:layout_editor_absoluteY="428dp" />
 
             <EditText
-                android:id="@+id/etLocationFound"
+                android:id="@+id/etLocFound"
                 style="@style/Widget.AppCompat.EditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"
-                android:layout_marginBottom="20dp"
-                android:background="@drawable/custom_input"
-                android:drawableStart="@drawable/custom_location_icon"
-                android:drawablePadding="8dp"
                 android:ems="10"
                 android:hint="Enter location"
-                android:inputType="textMultiLine"
-                android:padding="8dp"
+                android:textSize="15dp"
+                android:background="@drawable/custom_input"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
                 android:paddingStart="8dp"
                 android:paddingEnd="8dp"
-                android:textSize="15dp" />
+                android:drawableStart="@drawable/custom_location_icon"
+                android:drawablePadding="8dp"
+                android:layout_marginBottom="20dp"
+                android:inputType="textMultiLine"
+                android:padding="8dp" />
         </LinearLayout>
     </ScrollView>
-
     <Button
         android:id="@+id/btnFound"
         android:layout_width="wrap_content"

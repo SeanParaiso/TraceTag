@@ -102,6 +102,8 @@ class DatabaseHandler(context: Context) : SQLiteOpenHelper(context, DATABASE_NAM
         return user
     }
 
+
+
     // Function to update a user in the database
     fun updateUser(user: UserModelClass): Int {
         val db = this.writableDatabase

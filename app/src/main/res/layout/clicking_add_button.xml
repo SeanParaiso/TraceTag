@@ -10,21 +10,23 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:padding="8dp"
-            android:layout_gravity="center">
+            android:padding="20dp"
+            android:gravity="center">
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
+                android:layout_marginLeft="90dp"
                 android:background="#C3DF88">
 
                 <ImageButton
                     android:id="@+id/btnAddFound"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/found"
-                    android:layout_margin="5dp"/>
+                    android:layout_width="match_parent"
+                    android:layout_height="112dp"
+                    android:layout_margin="5dp"
+                    android:background="@android:color/transparent"
+                    app:srcCompat="@drawable/found" />
 
                 <TextView
                     android:id="@+id/tvAddFound"
@@ -35,9 +37,15 @@
                     android:textSize="20sp" />
 
             </LinearLayout>
-
         </LinearLayout>
-
+    <ImageButton
+        android:id="@+id/closeBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_margin="5dp"
+        android:background="@android:color/transparent"
+        app:srcCompat="@android:drawable/ic_delete" />
 
 
 
