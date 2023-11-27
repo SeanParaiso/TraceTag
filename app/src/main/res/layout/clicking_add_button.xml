@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="20dp"
+    android:layout_marginHorizontal="20dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            android:layout_gravity="center">
+
+            <LinearLayout
+                android:layout_width="136dp"
+                android:layout_height="wrap_content"
+                android:background="#C3DF88"
+                android:orientation="vertical"
+                android:paddingRight="10dp">
+
+                <ImageButton
+                    android:id="@+id/btnAddLost"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    app:srcCompat="@drawable/lost" />
+
+                <TextView
+                    android:id="@+id/tvAddLost"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/bentham"
+                    android:text="Add Missing Item"
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="90dp"
+                android:background="#C3DF88">
+
+                <ImageButton
+                    android:id="@+id/btnAddFound"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/found"
+                    android:layout_margin="5dp"/>
+
+                <TextView
+                    android:id="@+id/tvAddFound"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/bentham"
+                    android:text="Add Found Item"
+                    android:textSize="20sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+
+
+</androidx.cardview.widget.CardView>

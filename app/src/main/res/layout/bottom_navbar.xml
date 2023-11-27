@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardBackgroundColor="#286441"
+    app:cardCornerRadius="20dp"
+    android:layout_marginHorizontal="20dp"
+    app:layout_constraintBottom_toBottomOf="parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <ImageButton
+                android:id="@+id/homebtn"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginRight="45dp"
+                tools:srcCompat="@drawable/home"
+                android:scaleType="fitCenter"
+                />
+
+            <ImageButton
+                android:id="@+id/addbtn"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                tools:srcCompat="@drawable/add"
+                android:layout_margin="5dp"
+                android:scaleType="fitCenter"
+                />
+
+            <ImageButton
+                android:id="@+id/profilebtn"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                tools:srcCompat="@drawable/user"
+                android:layout_marginLeft="45dp"
+                android:scaleType="fitCenter"
+                />
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+</androidx.cardview.widget.CardView>
