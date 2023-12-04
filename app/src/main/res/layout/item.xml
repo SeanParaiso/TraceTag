@@ -6,7 +6,36 @@
     android:layout_height="match_parent"
     android:background="@drawable/background">
 
-        <LinearLayout
+    <ImageButton
+        android:id="@+id/btnBack"
+        android:layout_width="43dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:backgroundTint="@color/green"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.043"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.104"
+        app:srcCompat="@drawable/ic_back" />
+
+    <ImageButton
+        android:id="@+id/btnDelete"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.956"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.104"
+        app:srcCompat="@drawable/ic_delete" />
+
+    <LinearLayout
             android:id="@+id/topnavbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -38,30 +67,16 @@
                 android:src="@drawable/info" />
         </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/linearLayout2"
-        android:layout_width="match_parent"
-        android:layout_height="55dp"
-        android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@id/topnavbar">
-
-        <ImageButton
-            android:id="@+id/btnBack"
-            android:layout_width="40dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:scaleType="fitCenter"
-            app:srcCompat="@drawable/back"
-            android:layout_marginRight="350dp"/>
-
-    </LinearLayout>
-
     <ImageView
         android:id="@+id/imgitem"
-        android:layout_width="413dp"
-        android:layout_height="238dp"
+        android:layout_width="415dp"
+        android:layout_height="150dp"
         android:src="@drawable/ic_launcher_background"
-        app:layout_constraintTop_toBottomOf="@id/linearLayout2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.197"
         tools:ignore="MissingConstraints" />
 
     <ScrollView
@@ -77,43 +92,135 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:gravity="center"
+
+        android:padding="20dp">
 
         <TextView
-            android:id="@+id/tvItemName"
+            android:id="@+id/textView21"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/bentham"
-            android:text="Item Name"
-            android:padding="15dp"
-            android:textSize="34sp" />
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text="Item:"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/tvItemCatgry"
+            android:id="@+id/foundName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/bentham"
-            android:textSize="20sp"
-            android:padding="15dp"
-            android:text="Category" />
+            android:fontFamily="@font/poppins"
+            android:text="TextView"
+            android:textSize="16sp" />
 
         <TextView
-            android:id="@+id/tvItemDesc"
+            android:id="@+id/textView22"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/bentham"
-            android:textSize="24sp"
-            android:padding="15dp"
-            android:text="Description" />
+            android:fontFamily="sans-serif-condensed-medium"
+            android:paddingTop="4dp"
+            android:text="Location:"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/tvUserLoc"
+            android:id="@+id/foundLocation"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/bentham"
-            android:textSize="24sp"
-            android:padding="15dp"
-            android:text="Location" />
+            android:fontFamily="@font/poppins"
+            android:text="TextView"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/textView23"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text="Description:"
+            android:paddingTop="4dp"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/foundDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins"
+            android:text="TextView"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/textView24"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:paddingTop="4dp"
+            android:text="Date Found:"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/foundDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins"
+            android:text="TextView"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/textView25"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text="Mobile Number: "
+            android:paddingTop="4dp"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/FoundNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins"
+            android:text="TextView"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/textView26"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text="Facebook Profile:"
+            android:textSize="18sp"
+            android:paddingTop="4dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/foundFacebook"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins"
+            android:text="TextView"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/textView33"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text="Email Address:"
+            android:paddingTop="4dp"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/foundEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins"
+            android:text="TextView"
+            android:textSize="16sp" />
     </LinearLayout>
     </ScrollView>
     <LinearLayout
@@ -132,34 +239,7 @@
             android:orientation="horizontal"
             tools:layout_editor_absoluteX="1dp"
             tools:layout_editor_absoluteY="428dp"
-            android:gravity="center">
-
-            <ImageView
-                android:id="@+id/imageView3"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                app:srcCompat="@drawable/user2"
-                />
-
-            <TextView
-                android:id="@+id/tvUser"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/bentham"
-                android:text="Username"
-                />
-        </LinearLayout>
-
-        <Button
-            android:id="@+id/btnDetails"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#C3DF88"
-            android:fontFamily="@font/bentham"
-            android:text="Contact Details"
-            android:textColor="#000000"
-            android:textStyle="bold"
-            android:textSize="16sp"/>
+            android:gravity="center"/>
 
 
     </LinearLayout>

@@ -55,16 +55,18 @@ class ProfileActivity : AppCompatActivity() {
 
         // Set user details to Text Views
         val nameTextView = findViewById<TextView>(R.id.tvName)
+        val userNameTextView = findViewById<TextView>(R.id.tvUsername)
         val locationTextView = findViewById<TextView>(R.id.tvLoc)
         val conNumTextView = findViewById<TextView>(R.id.tvNum)
         val fbProfTextView = findViewById<TextView>(R.id.tvFb)
         val emailTextView = findViewById<TextView>(R.id.tvEmail)
 
-        nameTextView.text = "Name: $name"
-        locationTextView.text = "Location: $location"
-        conNumTextView.text = "Contact Number: $mobileNumber"
-        fbProfTextView.text = "Facebook Profile: $facebook"
-        emailTextView.text = "Email: $email"
+        nameTextView.text = name
+        userNameTextView.text = username
+        locationTextView.text = location
+        conNumTextView.text = mobileNumber
+        fbProfTextView.text = facebook
+        emailTextView.text = email
 
     }
 }

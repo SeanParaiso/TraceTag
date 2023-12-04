@@ -60,7 +60,7 @@ class SignupActivity : AppCompatActivity() {
 
             if (result > -1) {
                 Toast.makeText(this, "Signup successful", Toast.LENGTH_SHORT).show()
-                saveUserDetailsToSharedPreferences(username, name, location, mobileNumber, facebook, email)
+                saveUserDetailsToSharedPreferences(username, name, password, location, mobileNumber, facebook, email)
                 finish()
             } else {
                 Toast.makeText(this, "Signup failed", Toast.LENGTH_SHORT).show()
@@ -78,6 +78,7 @@ class SignupActivity : AppCompatActivity() {
     private fun saveUserDetailsToSharedPreferences(
         username: String,
         name: String,
+        password: String,
         location: String,
         mobileNumber: String,
         facebook: String,
@@ -86,6 +87,7 @@ class SignupActivity : AppCompatActivity() {
         val editor = sharedPreferences.edit()
         editor.putString("username", username)
         editor.putString("name", name)
+        editor.putString("password", password)
         editor.putString("location", location)
         editor.putString("mobileNumber", mobileNumber)
         editor.putString("facebook", facebook)

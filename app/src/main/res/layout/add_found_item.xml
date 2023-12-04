@@ -38,46 +38,39 @@
     </LinearLayout>
 
 
-    <LinearLayout
-        android:id="@+id/linearLayout2"
-        android:layout_width="match_parent"
-        android:layout_height="55dp"
-        android:orientation="horizontal"
-        tools:ignore="MissingConstraints"
-        app:layout_constraintTop_toBottomOf="@+id/topnavbar"
-        tools:layout_editor_absoluteX="-1dp"
-        tools:layout_editor_absoluteY="57dp">
-
-        <ImageButton
-            android:id="@+id/btnBack"
-            android:layout_width="40dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:scaleType="fitCenter"
-            app:srcCompat="@drawable/back"
-            android:layout_marginRight="350dp"/>
-
-    </LinearLayout>
-
+    <ImageButton
+        android:id="@+id/btnBack"
+        android:layout_width="43dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:backgroundTint="@color/green"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.043"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.104"
+        app:srcCompat="@drawable/ic_back" />
 
     <LinearLayout
         android:id="@+id/ll3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="112dp"
+        android:gravity="center"
         android:orientation="vertical"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="113dp"
+        app:layout_constraintTop_toTopOf="@+id/topnavbar"
         tools:ignore="MissingConstraints"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
-        android:gravity="center">
+        tools:layout_editor_absoluteX="0dp">
 
         <ImageView
-            android:id="@+id/imageView4"
+            android:id="@+id/ItemImage"
             android:layout_width="109dp"
             android:layout_height="110dp"
+            android:src="@drawable/ic_launcher_background"
             tools:layout_editor_absoluteX="91dp"
-            tools:layout_editor_absoluteY="150dp"
-            android:src="@drawable/ic_launcher_background" />
+            tools:layout_editor_absoluteY="150dp" />
 
         <Button
             android:id="@+id/uploadfound"
@@ -89,11 +82,10 @@
             android:textColor="#000000" />
 
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical" />
-
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
 
 
     </LinearLayout>
@@ -112,6 +104,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
+            android:padding="20dp"
             android:orientation="vertical"
             app:layout_constraintTop_toBottomOf="@+id/ll3">
 
@@ -127,54 +120,84 @@
                 tools:layout_editor_absoluteY="428dp" />
 
             <EditText
-                android:id="@+id/etItemFound"
+                android:id="@+id/etItemName"
                 style="@style/Widget.AppCompat.EditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="Item name"
-                android:fontFamily="serif"
-                android:textSize="15dp"
-                android:background="@drawable/custom_input"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
-                android:paddingStart="8dp"
-                android:paddingEnd="8dp"
+                android:background="@drawable/custom_input"
                 android:drawableStart="@drawable/custom_username_icon"
                 android:drawablePadding="8dp"
+                android:ems="10"
+                android:fontFamily="serif"
+                android:hint="Item name"
                 android:inputType="textMultiLine"
-                android:padding="8dp" />
+                android:padding="8dp"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:textSize="15dp" />
 
             <TextView
-                android:id="@+id/textView3"
+                android:id="@+id/textView5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
                 android:fontFamily="@font/bentham"
-                android:text="Category:"
-                android:textStyle="bold"
-                android:layout_marginTop="10dp"
+                android:text="Location:"
                 android:textSize="16sp"
+                android:textStyle="bold"
                 tools:layout_editor_absoluteX="56dp"
                 tools:layout_editor_absoluteY="428dp" />
 
             <EditText
-                android:id="@+id/etCategoryFound"
+                android:id="@+id/etLocFound"
                 style="@style/Widget.AppCompat.EditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:ems="10"
-                android:fontFamily="serif"
-                android:hint="Enter category"
-                android:textSize="15dp"
-                android:background="@drawable/custom_input"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
+                android:background="@drawable/custom_input"
+                android:drawableStart="@drawable/custom_location_icon"
+                android:drawablePadding="8dp"
+                android:ems="10"
+                android:hint="Enter location"
+                android:inputType="textMultiLine"
+                android:padding="8dp"
                 android:paddingStart="8dp"
                 android:paddingEnd="8dp"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:fontFamily="@font/bentham"
+                android:text="Description:"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                tools:layout_editor_absoluteX="56dp"
+                tools:layout_editor_absoluteY="428dp" />
+
+            <EditText
+                android:id="@+id/etDescFound"
+                style="@style/Widget.AppCompat.EditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/custom_input"
                 android:drawableStart="@drawable/custom_username_icon"
                 android:drawablePadding="8dp"
+                android:ems="10"
+                android:fontFamily="serif"
+                android:hint="Enter description"
                 android:inputType="textMultiLine"
-                android:padding="8dp" />
+                android:padding="8dp"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:textSize="15dp" />
 
             <TextView
                 android:id="@+id/textView36"
@@ -208,66 +231,98 @@
                 android:textSize="15dp" />
 
             <TextView
-                android:id="@+id/textView4"
+                android:id="@+id/textView3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
                 android:fontFamily="@font/bentham"
-                android:text="Description:"
-                android:layout_marginTop="12dp"
+                android:text="Mobile Number:"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 tools:layout_editor_absoluteX="56dp"
                 tools:layout_editor_absoluteY="428dp" />
 
             <EditText
-                android:id="@+id/etDescFound"
+                android:id="@+id/etMobile"
                 style="@style/Widget.AppCompat.EditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/custom_input"
+                android:drawableStart="@drawable/custom_number_icon"
+                android:drawablePadding="8dp"
                 android:ems="10"
                 android:fontFamily="serif"
-                android:hint="Enter description"
-                android:textSize="15dp"
-                android:background="@drawable/custom_input"
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"
+                android:hint="ex. 09292912211"
+                android:inputType="textMultiLine"
+                android:padding="8dp"
                 android:paddingStart="8dp"
                 android:paddingEnd="8dp"
-                android:drawableStart="@drawable/custom_username_icon"
-                android:drawablePadding="8dp"
-                android:inputType="textMultiLine"
-                android:padding="8dp" />
+                android:textSize="15dp" />
 
             <TextView
-                android:id="@+id/textView5"
+                android:id="@+id/textView6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
                 android:fontFamily="@font/bentham"
-                android:text="Location:"
-                android:textStyle="bold"
-                android:layout_marginTop="12dp"
+                android:text="Facebook Profile:"
                 android:textSize="16sp"
+                android:textStyle="bold"
                 tools:layout_editor_absoluteX="56dp"
                 tools:layout_editor_absoluteY="428dp" />
 
             <EditText
-                android:id="@+id/etLocFound"
+                android:id="@+id/etCategoryFound"
                 style="@style/Widget.AppCompat.EditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="Enter location"
-                android:textSize="15dp"
-                android:background="@drawable/custom_input"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
+                android:background="@drawable/custom_input"
+                android:drawableStart="@drawable/custom_username_icon"
+                android:drawablePadding="8dp"
+                android:ems="10"
+                android:fontFamily="serif"
+                android:hint="Enter Facebook"
+                android:inputType="textMultiLine"
+                android:padding="8dp"
                 android:paddingStart="8dp"
                 android:paddingEnd="8dp"
-                android:drawableStart="@drawable/custom_location_icon"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/bentham"
+                android:text="Email Address:"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                tools:layout_editor_absoluteX="56dp"
+                tools:layout_editor_absoluteY="428dp" />
+
+            <EditText
+                android:id="@+id/etEmail"
+                style="@style/Widget.AppCompat.EditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/custom_input"
+                android:drawableStart="@drawable/custom_username_icon"
                 android:drawablePadding="8dp"
-                android:layout_marginBottom="20dp"
+                android:ems="10"
+                android:fontFamily="serif"
+                android:hint="Enter Email"
                 android:inputType="textMultiLine"
-                android:padding="8dp" />
+                android:layout_marginBottom="20dp"
+                android:padding="8dp"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:textSize="15dp" />
         </LinearLayout>
     </ScrollView>
     <Button
