@@ -27,7 +27,7 @@ class ChangePasswordActivity : AppCompatActivity() {
         etOldPassword = findViewById(R.id.etOldPassword)
         etNewPassword = findViewById(R.id.etNewPassword)
         etConfirmPassword = findViewById(R.id.etConfirmPassword)
-        btnUpdatePassword = findViewById(R.id.btnSignup2)
+        btnUpdatePassword = findViewById(R.id.btnUpdate)
 
         sharedPreferences = getSharedPreferences("user_prefs", Context.MODE_PRIVATE)
         dbHandler = DatabaseHandler(this)

@@ -16,6 +16,31 @@ class ItemDetailsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.item)
 
+        val btnAdd = findViewById<ImageButton>(R.id.addbtn)
+        btnAdd.setOnClickListener {
+            val intent = Intent(this, AddFoundItem::class.java)
+            startActivity(intent)
+        }
+
+        val btnAbout = findViewById<ImageButton>(R.id.info)
+        btnAbout.setOnClickListener{
+            val intent = Intent(this, aboutUs::class.java )
+            startActivity(intent)
+        }
+
+        val btnProfile = findViewById<ImageButton>(R.id.profilebtn)
+        btnProfile.setOnClickListener {
+            val intent = Intent(this, ProfileActivity::class.java)
+            startActivity(intent)
+        }
+
+        val btnHome = findViewById<ImageButton>(R.id.homebtn)
+        btnHome.setOnClickListener {
+            val i = Intent(this, HomeActivity::class.java)
+            startActivity(i)
+        }
+
+
         // Retrieve item details from intent
         val foundItem = intent.getSerializableExtra("foundItem") as FoundItem
 

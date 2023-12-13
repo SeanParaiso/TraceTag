@@ -25,6 +25,8 @@ class AddFoundItem : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.add_found_item)
 
+
+
         etItemName = findViewById(R.id.etItemName)
         etLocFound = findViewById(R.id.etLocFound)
         etDescFound = findViewById(R.id.etDescFound)
