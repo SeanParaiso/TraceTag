@@ -1,6 +1,5 @@
 package com.example.tracetag
 
-// DatabaseHelper.kt
 import android.content.ContentValues
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
@@ -42,7 +41,6 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
     }
 
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
-        // Upgrade the database if needed
     }
 
     fun insertFoundItem(foundItem: FoundItem): Long {
@@ -61,13 +59,12 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
         return db.insert(TABLE_NAME, null, values)
     }
 
-    // Inside DatabaseHelper class
     fun getAllFoundItems(): List<FoundItem> {
         val foundItems = mutableListOf<FoundItem>()
         val db = this.readableDatabase
 
         val projection = arrayOf(
-            COLUMN_ID,  // Include the item ID in the projection
+            COLUMN_ID,
             COLUMN_ITEM_NAME,
             COLUMN_LOCATION,
             COLUMN_DESCRIPTION,
@@ -118,7 +115,7 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
         val db = this.readableDatabase
 
         val projection = arrayOf(
-            COLUMN_ID,  // Include the item ID in the projection
+            COLUMN_ID,
             COLUMN_ITEM_NAME,
             COLUMN_LOCATION,
             COLUMN_DESCRIPTION,

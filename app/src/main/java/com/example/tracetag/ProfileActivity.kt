@@ -72,16 +72,12 @@ class ProfileActivity : AppCompatActivity() {
         val email = sharedPreferences.getString("email", "")
 
 
-        // Retrieve user_id from SharedPreferences
+        // Retrieve user_id and user details from SharedPreferences
         val userId = sharedPreferences.getLong("user_id", 0)
-
-
-        // Retrieve user details from the database using user_id
         val user = dbHandler.getUserById(userId.toInt())
 
 
         if (user != null) {
-            // Set user details to Text Views
             val nameTextView = findViewById<TextView>(R.id.tvName)
             val userNameTextView = findViewById<TextView>(R.id.tvUsername)
             val locationTextView = findViewById<TextView>(R.id.tvLoc)

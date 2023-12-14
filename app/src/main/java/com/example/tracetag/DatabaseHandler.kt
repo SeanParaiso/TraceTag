@@ -42,8 +42,6 @@ class DatabaseHandler(private val context: Context) : SQLiteOpenHelper(context, 
         onCreate(db)
     }
 
-
-    // Function to add a new user to the database
     fun addUser(user: UserModelClass): Long {
         val db = this.writableDatabase
         val contentValues = ContentValues()
@@ -56,10 +54,8 @@ class DatabaseHandler(private val context: Context) : SQLiteOpenHelper(context, 
         contentValues.put(KEY_EMAIL, user.email)
 
 
-        // Inserting Row
         val success = db.insert(TABLE_USERS, null, contentValues)
-        db.close() // Closing database connection
-
+        db.close()
 
         // Store the user ID in SharedPreferences
         if (success != -1L) {
@@ -71,7 +67,6 @@ class DatabaseHandler(private val context: Context) : SQLiteOpenHelper(context, 
     }
 
 
-    // Function to authenticate a user during login
     fun loginUser(username: String, password: String): UserModelClass? {
         val db = this.readableDatabase
         val selectQuery = "SELECT * FROM $TABLE_USERS WHERE $KEY_USERNAME = ? AND $KEY_PASSWORD = ?"
@@ -126,18 +121,23 @@ class DatabaseHandler(private val context: Context) : SQLiteOpenHelper(context, 
     }
 
 
-    // Function to update a user in the database
-    fun updateUser(user: UserModelClass): Int {
+    fun updateUser(userId: Int, oldPassword: String, newPassword: String): Int {
         val db = this.writableDatabase
         val contentValues = ContentValues()
-        contentValues.put(KEY_PASSWORD, user.password)
+        contentValues.put(KEY_PASSWORD, newPassword)
 
+        // Update Row if and only if the user ID and old password match
+        val success = db.update(
+            TABLE_USERS,
+            contentValues,
+            "$KEY_ID=? AND $KEY_PASSWORD=?",
+            arrayOf(userId.toString(), oldPassword)
+        )
 
-        // Updating Row
-        val success = db.update(TABLE_USERS, contentValues, "$KEY_ID=?", arrayOf(user.userId.toString()))
-        db.close() // Closing database connection
+        db.close()
         return success
     }
+
 
 
     private fun saveUserIdToSharedPreferences(userId: Long) {
@@ -195,7 +195,6 @@ class DatabaseHandler(private val context: Context) : SQLiteOpenHelper(context, 
         return user
     }
 
-    // Add this method to DatabaseHandler
     fun loginUserById(userId: Int, password: String): UserModelClass? {
         val db = this.readableDatabase
         val selectQuery = "SELECT * FROM $TABLE_USERS WHERE $KEY_ID = ? AND $KEY_PASSWORD = ?"

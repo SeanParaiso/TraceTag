@@ -1,4 +1,4 @@
-// FoundItemAdapter.kt (within the same file)
+
 package com.example.tracetag
 
 import android.content.Context
@@ -37,14 +37,12 @@ class FoundItemAdapter(
         val foundItem = foundItems[position]
 
         // Populate the views with data from the FoundItem object
-        // You need to implement the logic for loading the image, e.g., using Glide
-        holder.titleImage.setImageResource(R.drawable.sample) // Replace with actual logic
+        holder.titleImage.setImageResource(R.drawable.sample)
 
         holder.tvName.text = foundItem.itemName
         holder.tvLocation.text = foundItem.location
         holder.tvFound.text = foundItem.dateFound
 
-        // Set a click listener for the item view
         holder.itemView.setOnClickListener {
             itemClickListener.onItemClick(foundItem)
         }
@@ -68,7 +66,6 @@ class FoundItemAdapter(
         // Get the ID from the deleted item
         val deletedItemId = deletedItem.id
 
-        // Assuming you have an ID field in FoundItem
         // Pass the databaseHelper instance to the adapter when creating it
         val databaseHelper = DatabaseHelper(context)
 
@@ -76,10 +73,8 @@ class FoundItemAdapter(
         val deletedRows = databaseHelper.deleteFoundItem(deletedItemId)
 
         if (deletedRows > 0) {
-            // Successfully deleted from the database
             Toast.makeText(context, "Item deleted successfully", Toast.LENGTH_SHORT).show()
         } else {
-            // Failed to delete from the database
             Toast.makeText(context, "Failed to delete item", Toast.LENGTH_SHORT).show()
         }
     }

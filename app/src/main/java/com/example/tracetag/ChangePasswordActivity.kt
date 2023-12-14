@@ -46,11 +46,8 @@ class ChangePasswordActivity : AppCompatActivity() {
         val newPassword = etNewPassword.text.toString()
         val confirmPassword = etConfirmPassword.text.toString()
 
-        // Retrieve stored user ID and password from SharedPreferences
-        val userId = sharedPreferences.getLong("user_id", 0L) // Use "user_id" as the key
-        val storedPassword = sharedPreferences.getString("password", null)
+        val userId = sharedPreferences.getLong("user_id", 0L)
 
-        // Validate if fields are not empty
         if (oldPassword.isEmpty() || newPassword.isEmpty() || confirmPassword.isEmpty()) {
             Toast.makeText(this, "Please fill in all fields", Toast.LENGTH_SHORT).show()
             return
@@ -62,33 +59,27 @@ class ChangePasswordActivity : AppCompatActivity() {
             return
         }
 
-        // Check if the stored user ID and password are not null
-        if (userId != 0L && storedPassword != null) {
-            // Check if the old password matches the stored password
-            if (oldPassword == storedPassword) {
+        // Check if the stored user ID is not null
+        if (userId != 0L) {
+            // Update the password in the database
+            val updateResult = dbHandler.updateUser(userId.toInt(), oldPassword, newPassword)
+
+            if (updateResult > 0) {
                 // Update the password in SharedPreferences
                 val editor = sharedPreferences.edit()
                 editor.putString("password", newPassword)
                 editor.apply()
 
-                // Update the password in the database (optional)
-                val storedUser = dbHandler.loginUserById(userId.toInt(), oldPassword)
-                if (storedUser != null) {
-                    storedUser.password = newPassword
-                    val updateResult = dbHandler.updateUser(storedUser)
-
-                    if (updateResult > 0) {
-                        Toast.makeText(this, "Password updated successfully", Toast.LENGTH_SHORT).show()
-                        finish()
-                    } else {
-                        Toast.makeText(this, "Failed to update password in the database", Toast.LENGTH_SHORT).show()
-                    }
-                }
+                Toast.makeText(this, "Password updated successfully", Toast.LENGTH_SHORT).show()
+                finish()
             } else {
-                Toast.makeText(this, "Incorrect current password", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Incorrect current password or failed to update password in the database", Toast.LENGTH_SHORT).show()
             }
         } else {
-            Toast.makeText(this, "User ID or password not found", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "User ID not found", Toast.LENGTH_SHORT).show()
         }
     }
+
+
+
 }

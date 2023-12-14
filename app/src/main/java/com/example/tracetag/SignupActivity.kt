@@ -43,7 +43,6 @@ class SignupActivity : AppCompatActivity() {
             val facebook = etFacebook.text.toString()
             val email = etEmail.text.toString()
 
-            // Check if any field is empty
             if (name.isEmpty() || username.isEmpty() || password.isEmpty() ||
                 location.isEmpty() || mobileNumber.isEmpty() || facebook.isEmpty() || email.isEmpty()
             ) {
@@ -51,7 +50,6 @@ class SignupActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            // Create an instance of UserModelClass with the retrieved values
             val user = UserModelClass(
                 userId = 0, name = name, username = username, password = password,
                 location = location, mobileNumber = mobileNumber, facebook = facebook, email = email)

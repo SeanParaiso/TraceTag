@@ -1,4 +1,4 @@
-// HomeActivity.kt
+
 package com.example.tracetag
 
 import android.content.Intent
@@ -58,7 +58,6 @@ class HomeActivity : AppCompatActivity(), ItemClickListener {
         foundItemAdapter = FoundItemAdapter(this, mutableListOf(), this)
         recyclerView.adapter = foundItemAdapter
 
-        // Load found items
         loadFoundItems()
 
         // Initialize and set up the SearchView

@@ -51,7 +51,7 @@ class AddFoundItem : AppCompatActivity() {
 
         val btnUpload = findViewById<Button>(R.id.uploadfound)
         btnUpload.setOnClickListener {
-            // Add functionality for uploading photos if needed
+
         }
     }
 
@@ -72,7 +72,6 @@ class AddFoundItem : AppCompatActivity() {
             // Item saved successfully
             Toast.makeText(this, "Item added successfully", Toast.LENGTH_SHORT).show()
 
-            // Navigate back to HomeActivity
             val intent = Intent(this, HomeActivity::class.java)
             startActivity(intent)
             finish()
