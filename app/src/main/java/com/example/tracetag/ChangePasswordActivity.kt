@@ -1,7 +1,6 @@
 package com.example.tracetag
 
 import android.content.Context
-import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.widget.Button
@@ -47,8 +46,8 @@ class ChangePasswordActivity : AppCompatActivity() {
         val newPassword = etNewPassword.text.toString()
         val confirmPassword = etConfirmPassword.text.toString()
 
-        // Retrieve stored username and password from SharedPreferences
-        val username = sharedPreferences.getString("username", null)
+        // Retrieve stored user ID and password from SharedPreferences
+        val userId = sharedPreferences.getLong("user_id", 0L) // Use "user_id" as the key
         val storedPassword = sharedPreferences.getString("password", null)
 
         // Validate if fields are not empty
@@ -63,8 +62,8 @@ class ChangePasswordActivity : AppCompatActivity() {
             return
         }
 
-        // Check if the username and stored password are not null
-        if (username != null && storedPassword != null) {
+        // Check if the stored user ID and password are not null
+        if (userId != 0L && storedPassword != null) {
             // Check if the old password matches the stored password
             if (oldPassword == storedPassword) {
                 // Update the password in SharedPreferences
@@ -73,7 +72,7 @@ class ChangePasswordActivity : AppCompatActivity() {
                 editor.apply()
 
                 // Update the password in the database (optional)
-                val storedUser = dbHandler.loginUser(username, oldPassword)
+                val storedUser = dbHandler.loginUserById(userId.toInt(), oldPassword)
                 if (storedUser != null) {
                     storedUser.password = newPassword
                     val updateResult = dbHandler.updateUser(storedUser)
@@ -89,7 +88,7 @@ class ChangePasswordActivity : AppCompatActivity() {
                 Toast.makeText(this, "Incorrect current password", Toast.LENGTH_SHORT).show()
             }
         } else {
-            Toast.makeText(this, "Username or password not found", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "User ID or password not found", Toast.LENGTH_SHORT).show()
         }
     }
 }

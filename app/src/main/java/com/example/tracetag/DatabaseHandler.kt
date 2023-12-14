@@ -1,7 +1,6 @@
 package com.example.tracetag
 
 
-import android.annotation.SuppressLint
 import android.content.ContentValues
 import android.content.Context
 import android.database.Cursor
@@ -195,4 +194,48 @@ class DatabaseHandler(private val context: Context) : SQLiteOpenHelper(context, 
         db.close()
         return user
     }
+
+    // Add this method to DatabaseHandler
+    fun loginUserById(userId: Int, password: String): UserModelClass? {
+        val db = this.readableDatabase
+        val selectQuery = "SELECT * FROM $TABLE_USERS WHERE $KEY_ID = ? AND $KEY_PASSWORD = ?"
+        val cursor: Cursor?
+
+        try {
+            cursor = db.rawQuery(selectQuery, arrayOf(userId.toString(), password))
+        } catch (e: SQLiteException) {
+            db.execSQL(selectQuery)
+            return null
+        }
+
+        var user: UserModelClass? = null
+
+        if (cursor.moveToFirst()) {
+            val nameIndex = cursor.getColumnIndex(KEY_NAME)
+            val usernameIndex = cursor.getColumnIndex(KEY_USERNAME)
+            val locationIndex = cursor.getColumnIndex(KEY_LOCATION)
+            val mobileNumberIndex = cursor.getColumnIndex(KEY_MOBILE_NUMBER)
+            val facebookIndex = cursor.getColumnIndex(KEY_FACEBOOK)
+            val emailIndex = cursor.getColumnIndex(KEY_EMAIL)
+
+            if (nameIndex >= 0 && usernameIndex >= 0 && locationIndex >= 0 &&
+                mobileNumberIndex >= 0 && facebookIndex >= 0 && emailIndex >= 0
+            ) {
+                user = UserModelClass(
+                    userId = userId.toInt(),
+                    name = cursor.getString(nameIndex),
+                    username = cursor.getString(usernameIndex),
+                    password = "", // You might want to handle this differently
+                    location = cursor.getString(locationIndex),
+                    mobileNumber = cursor.getString(mobileNumberIndex),
+                    facebook = cursor.getString(facebookIndex),
+                    email = cursor.getString(emailIndex)
+                )
+            }
+        }
+        cursor.close()
+        db.close()
+        return user
+    }
+
 }
