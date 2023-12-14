@@ -4,6 +4,7 @@ package com.example.tracetag
 import android.content.Intent
 import android.os.Bundle
 import android.widget.ImageButton
+import android.widget.SearchView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -13,6 +14,7 @@ class HomeActivity : AppCompatActivity(), ItemClickListener {
     private lateinit var recyclerView: RecyclerView
     private lateinit var foundItemAdapter: FoundItemAdapter
     private lateinit var databaseHelper: DatabaseHelper
+    private lateinit var searchView: SearchView
 
     companion object {
         private const val ITEM_DETAILS_REQUEST_CODE = 123
@@ -46,7 +48,6 @@ class HomeActivity : AppCompatActivity(), ItemClickListener {
             startActivity(i)
         }
 
-
         recyclerView = findViewById(R.id.recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(this)
 
@@ -59,11 +60,31 @@ class HomeActivity : AppCompatActivity(), ItemClickListener {
 
         // Load found items
         loadFoundItems()
+
+        // Initialize and set up the SearchView
+        searchView = findViewById(R.id.search)
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                return false
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                // Load items based on the search query
+                loadFoundItems(newText)
+                return true
+            }
+        })
     }
 
-    private fun loadFoundItems() {
+    private fun loadFoundItems(searchQuery: String? = null) {
         // Retrieve data from the database using the DatabaseHelper
-        val foundItems = databaseHelper.getAllFoundItems()
+        val foundItems = if (searchQuery.isNullOrBlank()) {
+            // Load all items if the search query is null or empty
+            databaseHelper.getAllFoundItems()
+        } else {
+            // Load items based on the search query
+            databaseHelper.searchFoundItems(searchQuery)
+        }
 
         // Update the adapter with the retrieved data
         foundItemAdapter.updateData(foundItems)

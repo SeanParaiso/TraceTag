@@ -113,5 +113,53 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
         return success
     }
 
+    fun searchFoundItems(query: String): List<FoundItem> {
+        val foundItems = mutableListOf<FoundItem>()
+        val db = this.readableDatabase
+
+        val projection = arrayOf(
+            COLUMN_ID,  // Include the item ID in the projection
+            COLUMN_ITEM_NAME,
+            COLUMN_LOCATION,
+            COLUMN_DESCRIPTION,
+            COLUMN_DATE_FOUND,
+            COLUMN_MOBILE_NUMBER,
+            COLUMN_FACEBOOK_PROFILE,
+            COLUMN_EMAIL_ADDRESS
+        )
+
+        val selection = "$COLUMN_ITEM_NAME LIKE ?"
+        val selectionArgs = arrayOf("%$query%")
+
+        val cursor = db.query(TABLE_NAME, projection, selection, selectionArgs, null, null, null)
+
+        cursor.use {
+            while (it.moveToNext()) {
+                val itemId = it.getInt(it.getColumnIndexOrThrow(COLUMN_ID))
+                val itemName = it.getString(it.getColumnIndexOrThrow(COLUMN_ITEM_NAME))
+                val location = it.getString(it.getColumnIndexOrThrow(COLUMN_LOCATION))
+                val description = it.getString(it.getColumnIndexOrThrow(COLUMN_DESCRIPTION))
+                val dateFound = it.getString(it.getColumnIndexOrThrow(COLUMN_DATE_FOUND))
+                val mobileNumber = it.getString(it.getColumnIndexOrThrow(COLUMN_MOBILE_NUMBER))
+                val facebookProfile = it.getString(it.getColumnIndexOrThrow(COLUMN_FACEBOOK_PROFILE))
+                val emailAddress = it.getString(it.getColumnIndexOrThrow(COLUMN_EMAIL_ADDRESS))
+
+                val foundItem = FoundItem(
+                    itemId,  // Pass the item ID to FoundItem
+                    itemName,
+                    location,
+                    description,
+                    dateFound,
+                    mobileNumber,
+                    facebookProfile,
+                    emailAddress
+                )
+                foundItems.add(foundItem)
+            }
+        }
+
+        return foundItems
+    }
+
 
 }
